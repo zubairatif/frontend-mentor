@@ -1,0 +1,260 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Montserrat:wght@500;700&display=swap");
+
+/** -------- GLOBAL START -----------  */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+
+html {
+  font-size: 62.5%; /** Setting 1rem to 10px */
+}
+
+:root {
+  /** Colors  in HSL()*/
+  --darkCyan: 158 36% 37%;
+  --cream: 30 38% 92%;
+  --blackBlue: 212 21% 14%;
+  --grayBlue: 228 12% 48%;
+  /** Typography */
+  --headingFont: "Fraunces", serif;
+  --bodyFont: "Montserrat", sans-serif;
+}
+/** Highlighted text colour  */
+::selection {
+  background: hsl(var(--darkCyan));
+  color: hsl(var(--cream));
+}
+::-moz-selection {
+  background: hsl(var(--darkCyan));
+  color: hsl(var(--cream));
+}
+/** Defaults on body, centering everything  */
+body {
+  font-family: var(--bodyFont);
+  color: hsl(var(--grayBlue)); /** Light Black for body text*/
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--headingFont);
+  color: hsl(var(--blackBlue)); /** Dark Black for body text*/
+}
+/** Some custom resetting */
+a,
+button {
+  color: inherit;
+  font: inherit;
+}
+a:hover,
+a:focus {
+  text-decoration: none;
+}
+img {
+  display: block;
+  max-width: 100%;
+  height: 100%;
+}
+/** -------- GLOBAL END -----------  */
+
+/** Medium screen and small screens below 750 Pixels  */
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 90vw;
+  background-color: hsl(var(--cream));
+  box-shadow: 2px 5px 10px 2px hsl(var(--blackBlue) / 0.5);
+  -webkit-box-shadow: 2px 5px 10px 2px hsl(var(--blackBlue) / 0.5);
+  -moz-box-shadow: 2px 5px 10px 2px hsl(var(--blackBlue) / 0.5);
+  border-radius: 2rem;
+  min-height: max-content;
+}
+
+/** Two childs of main*/
+picture {
+  flex: 1 1 50%;
+  display: block;
+  border-radius: 2rem 2rem 0 0;
+  overflow: hidden;
+}
+.details {
+  flex: 1 1 50%;
+  padding: 2rem 2rem;
+}
+/** ------- MAIN END ---------- */
+
+/** The category of product on top of h1.name */
+.category {
+  display: block;
+  font-size: clamp(1.4rem, 1.8vw + 1rem, 2rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5em;
+  color: hsl(var(--darkCyan) / 0.8);
+  margin-block-end: 0.5em;
+}
+/** Title/name of product  */
+h1 {
+  font-size: clamp(2rem, 6vw + 1rem, 4rem);
+  margin-block-end: 1.5rem;
+  line-height: 1.1;
+}
+/** the paragraph (description) below h1.name */
+.description {
+  font-size: clamp(1.8rem, 2vw + 1rem, 2.3rem);
+  margin-block-end: 1em;
+  line-height: 1.5;
+}
+/** Container of old and discounted price */
+.price {
+  /*/ A div*/
+  display: flex;
+  align-items: center;
+  gap: 2em;
+  margin-block-end: 2rem;
+}
+.finalPrice {
+  font-family: var(--headingFont);
+  font-size: clamp(4rem, 7vw + 1rem, 4.5rem);
+  color: hsl(var(--darkCyan));
+}
+.ogPrice {
+  font-size: 2.6rem;
+}
+/** -------- Price End -------- */
+/** Button (Add to Cart) */
+.addCart {
+  font-size: 2rem;
+  font-weight: 700;
+  padding-block: 1em;
+  border: none;
+  border-radius: 1rem;
+  width: 100%;
+  color: hsl(var(--cream));
+  background-color: hsl(var(--darkCyan));
+}
+.buttonIcon {
+  margin-inline-end: 0.5em;
+}
+/** Hover animation only on devices that support it */
+@media (any-hover: hover) and (pointer: fine) {
+  .addCart:hover {
+    --darkCyan: 158 36% 30%;
+    cursor: pointer;
+  }
+}
+/** ------------ Button End ----------- */
+/** Credits in foooter */
+footer {
+  width: 100%;
+  padding: 1rem;
+  text-align: center;
+  font-size: 1.8rem;
+}
+
+/** --------- Below 750px medium+small END ---------- */
+/** Some slight adjustments for Smaller sizes */
+@media screen and (max-width: 350px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  main {
+    margin-block-start: 50px;
+  }
+  .price {
+    flex-direction: column;
+    gap: 5px;
+    margin-block-end: 15px;
+  }
+  .finalPrice {
+    font-size: 2.6rem;
+  }
+  .ogPrice {
+    font-size: 1.8rem;
+  }
+  h1.name {
+    font-size: 2.6rem;
+    margin-block-end: 10px;
+  }
+}
+/** ------- 350px End --------- */
+
+@media screen and (min-width: 550px) {
+  main {
+    max-width: min(85vw, 500px);
+  }
+  h1.name {
+    font-size: 3.4rem;
+    margin-block-end: 0.2em;
+  }
+  .finalPrice {
+    font-size: 4rem;
+  }
+}
+/** ------- Styles For desktop -------  */
+@media screen and (min-width: 750px) {
+  main {
+    flex-direction: row;
+    align-items: center;
+  }
+  picture {
+    border-radius: 2rem 0 0 2rem;
+    height: 100%;
+  }
+  h1.name {
+    font-size: clamp(2.8rem, 3rem, 3.2rem);
+  }
+  p.description {
+    font-size: 1.7rem;
+  }
+  .finalPrice {
+    font-size: 3.4rem;
+  }
+  .ogPrice {
+    font-size: 2.1rem;
+  }
+  main {
+    max-width: 700px;
+  }
+}
+/** ------ Styles for Large Screens --------- */
+@media (min-width: 1400px) and (min-height: 900px) {
+  main {
+    max-width: 1000px;
+  }
+  .category,
+  p.description,
+  .ogPrice,
+  .addCart {
+    font-size: 2.4rem;
+  }
+  p.description {
+    margin-block-end: 1em;
+  }
+  h1.name {
+    font-size: clamp(3.8rem, 4.4rem, 5.2rem);
+    margin-block-end: 0.5em;
+  }
+  .finalPrice {
+    font-size: 5rem;
+  }
+  .price {
+    margin-block-end: 3rem;
+  }
+}
