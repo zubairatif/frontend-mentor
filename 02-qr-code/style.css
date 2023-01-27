@@ -4,7 +4,7 @@
   --light-gray: hsl(212, 45%, 89%);
   --gray-blue: hsl(220, 15%, 55%);
   --dark-blue: hsl(217, 45%, 22%);
-  --b-r: 20px;
+  --b-r: 15px;
 }
 *,
 *::before,
@@ -32,13 +32,13 @@ picture {
   max-width: 100%;
 }
 main {
-  width: 350px;
+  width: 300px;
   border-radius: var(--b-r);
   background-color: white;
   padding: 20px;
 }
 .qr {
-  margin-block-end: 30px;
+  margin-block-end: 20px;
 }
 .qr img {
   border-radius: var(--b-r);
@@ -47,11 +47,11 @@ h2 {
   font-weight: 700;
   color: var(--dark-blue);
   line-height: 1.2;
-  font-size: 25px;
-  margin-block-end: 10px;
+  font-size: 22px;
+  margin-block-end: 8px;
 }
 p {
-  font-size: 18px;
+  font-size: 15px;
   color: var(--gray-blue);
   margin-block-end: 20px;
 }
