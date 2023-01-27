@@ -27,6 +27,15 @@ html,
 body {
   height: 100%;
 }
+.visually-hidden:not(:focus):not(:active) {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
 body {
   font-size: 15px;
   font-weight: 400;
@@ -37,14 +46,14 @@ body {
 }
 main {
   background-color: var(--dark-blue);
-  padding: 30px;
+  padding: 25px;
   border-radius: 15px;
   margin-block-end: 20px;
-  max-width: 345px;
+  max-width: 375px;
 }
 .star {
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   background-color: var(--medium-grey);
   display: grid;
@@ -70,8 +79,8 @@ input[type="radio"] {
   -webkit-appearance: none;
   appearance: none;
   background-color: var(--medium-grey);
-  width: 45px;
-  height: 45px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   display: grid;
   place-items: center;
@@ -144,38 +153,28 @@ p.thanks-text {
 }
 
 @media (min-width: 375px) {
-  main {
-    max-width: 450px;
-    padding: 50px;
-  }
   body {
-    font-size: 22px;
+    font-size: 17px;
   }
   .star {
-    width: 60px;
-    height: 60px;
-    margin-block-end: 40px;
+    margin-block-end: 30px;
   }
   h1 {
-    font-size: 38px;
+    font-size: 30px;
   }
   .options {
-    margin-block-end: 40px;
+    margin-block-end: 30px;
     gap: 20px;
-  }
-  input[type="radio"] {
-    width: 60px;
-    height: 60px;
   }
   button.submit {
     margin-block-end: 10px;
-    padding: 20px 0px;
+    padding: 15px 0px;
   }
   .thank-you-img {
-    margin-block-end: 40px;
+    margin-block-end: 30px;
   }
   .selected {
-    margin-block-end: 40px;
+    margin-block-end: 30px;
   }
 }
 .hide {
