@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Intro section with dropdown navigation</title>
+  </head>
+  <body>
+    <header>
+      <img class="logo" src="images/logo.svg" alt="Snap" />
+      <button aria-controls="header-nav" aria-expanded="false">
+        <img src="images/icon-menu.svg" alt="open menu" />
+      </button>
+      <nav class="header-nav" id="header-nav">
+        <a href="javascript:;" onclick="showDropdown();" class="nav-links"
+          >Features
+          <img
+            src="images/icon-arrow-down.svg"
+            alt="arrow-down"
+            class="arrow arrow-down" /></a
+        ><a href="javascript:;" onclick="showDropdown();" class="nav-links"
+          >Company
+          <img
+            src="images/icon-arrow-down.svg"
+            alt="arrow-down"
+            class="arrow arrow-down" /></a
+        ><a href="#" class="nav-links">Careers</a
+        ><a href="#" class="nav-links">About</a>
+        <div class="header-login-btns">
+          <button class="nav-links" id="login-header">Login</button>
+          <button class="btn-secondary" id="register-header">Register</button>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section class="hero-container">
+        <div class="hero-content">
+          <h1>Make remote work</h1>
+          <p class="hero-text">
+            Get your team in sync, no matter your location. Streamline
+            processes, create team rituals, and watch productivity soar
+          </p>
+          <button class="btn-primary">Learn more</button>
+        </div>
+        <div class="hero-image">
+          <picture>
+            <source
+              media="(min-width: 376px)"
+              srcset="images/image-hero-desktop.png"
+            />
+            <img src="images/image-hero-mobile.png" alt="hero image" />
+          </picture>
+        </div>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
